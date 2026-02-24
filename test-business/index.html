@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carolina Coastal Services | Local Business in Wilmington NC</title>
-    <meta name="description" content="Professional local services in Wilmington. Quality work, fair prices, and friendly service.">
+    <title>Carolina Coastal Services | Trusted Local Business in Wilmington NC</title>
+    <meta name="description" content="Professional local services in Wilmington. Quality work, transparent pricing, and exceptional customer service since 2010.">
     <style>
         * {
             margin: 0;
@@ -12,245 +12,416 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
+        :root {
+            --primary: #059669;
+            --primary-dark: #047857;
+            --accent: #f59e0b;
         }
 
-        @keyframes fadeInUp {
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateX(-50px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        .slide-left { animation: slideInLeft 0.6s ease-out; }
+        .slide-right { animation: slideInRight 0.6s ease-out; }
 
+        /* Header - Minimal */
         header {
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
-            color: white;
-            padding: 1rem 0;
+            background: white;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e5e7eb;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 3rem;
         }
 
         nav a {
-            color: white;
+            color: #4b5563;
             text-decoration: none;
-            transition: opacity 0.3s;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            opacity: 0.8;
+            color: var(--primary);
         }
 
         .cta-button {
-            background: #f59e0b;
+            background: var(--primary);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.3s;
+            transition: all 0.3s;
             display: inline-block;
         }
 
         .cta-button:hover {
-            transform: scale(1.05);
+            background: var(--primary-dark);
+            transform: translateY(-1px);
         }
 
+        /* Hero - Asymmetric Layout */
         .hero {
-            background: linear-gradient(135deg, rgba(5,150,105,0.95) 0%, rgba(4,120,87,0.95) 100%), 
-                        url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1600&q=80') center/cover;
-            color: white;
-            padding: 120px 20px 80px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .features {
-            padding: 80px 20px;
-            background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #059669;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-box {
-            text-align: center;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
             padding: 2rem;
-            border-radius: 12px;
-            background: #f0fdf4;
-            transition: transform 0.3s;
         }
 
-        .feature-box:hover {
-            transform: translateY(-8px);
+        .hero-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 55% 45%;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .feature-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
+        .hero-text h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            color: #111827;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
         }
 
-        .feature-box h3 {
-            color: #059669;
+        .hero-text .highlight {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-text .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: rgba(5, 150, 105, 0.2);
+            z-index: -1;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            color: #6b7280;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-badge-icon {
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
 
-        .about {
-            padding: 80px 20px;
-            background: #f8f9fa;
+        .hero-badge-text {
+            font-weight: 700;
+            color: #111827;
         }
 
-        .about-content {
+        /* Features - Horizontal Cards */
+        .features {
+            padding: 6rem 3rem;
+            background: white;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #111827;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6b7280;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        .features-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .feature-row {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            padding: 2.5rem;
+            background: #f9fafb;
+            border-radius: 16px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s;
+        }
+
+        .feature-row:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transform: translateX(8px);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #111827;
+        }
+
+        .feature-content p {
+            color: #6b7280;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* About - Side by Side */
+        .about {
+            padding: 6rem 3rem;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+        }
+
+        .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
-        .about-text h2 {
-            font-size: 2.5rem;
-            color: #059669;
+        .about-content h2 {
+            font-size: 3rem;
+            font-weight: 900;
             margin-bottom: 1.5rem;
+            color: #111827;
         }
 
-        .about-text p {
+        .about-content p {
             font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: #4b5563;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
         }
 
-        .stats {
+        .about-metrics {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .stat-box {
-            text-align: center;
-            padding: 1.5rem;
+        .metric-card {
             background: white;
+            padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        .stat-number {
+        .metric-number {
             font-size: 3rem;
-            font-weight: bold;
-            color: #059669;
+            font-weight: 900;
+            color: var(--primary);
         }
 
-        .stat-label {
+        .metric-label {
             color: #6b7280;
             margin-top: 0.5rem;
         }
 
-        .contact-section {
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
+        .about-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-section h2 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
+        /* CTA - Full Width */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 5rem 3rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
         }
 
         .contact-info {
-            font-size: 1.3rem;
-            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            font-size: 1.2rem;
+            margin-top: 2rem;
         }
 
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
+        /* Footer */
         footer {
-            background: #1a1a1a;
+            background: #111827;
             color: white;
-            padding: 40px 20px;
+            padding: 3rem 3rem 2rem;
             text-align: center;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .about-content {
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container,
+            .about-grid {
                 grid-template-columns: 1fr;
             }
-            .stats {
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-badge {
+                position: static;
+                margin-top: 2rem;
+            }
+
+            .feature-row {
                 grid-template-columns: 1fr;
             }
+
             nav ul {
                 display: none;
             }
@@ -260,7 +431,7 @@
 <body>
     <header>
         <div class="nav-container">
-            <div class="logo">🌊 Carolina Coastal Services</div>
+            <div class="logo">Carolina Coastal Services</div>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
@@ -272,37 +443,87 @@
         </div>
     </header>
 
-    <section class="hero fade-in">
-        <div class="container">
-            <h1>Wilmington's Trusted Local Business</h1>
-            <p>Quality service, honest pricing, and community-focused work. Serving Wilmington since 2010.</p>
-            <a href="tel:+19105240056" class="cta-button" style="font-size: 1.2rem; padding: 1rem 2rem;">📞 Call Now: (910) 524-0056</a>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text slide-left">
+                <h1>
+                    Wilmington's <span class="highlight">Trusted</span> Local Business
+                </h1>
+                <p>
+                    Quality service, honest pricing, and genuine care for our community. 
+                    We've been serving Wilmington for over a decade because we do it right.
+                </p>
+                <div class="hero-buttons">
+                    <a href="tel:+19105240056" class="cta-button" style="font-size: 1.1rem; padding: 1rem 2rem;">
+                        📞 Call: (910) 524-0056
+                    </a>
+                    <a href="#services" class="cta-button" style="background: white; color: var(--primary); border: 2px solid var(--primary);">
+                        Learn More
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">1000+</span>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">14</span>
+                        <div class="stat-label">Years in Business</div>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.9</span>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image slide-right">
+                <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80" alt="Local Business">
+                <div class="hero-badge">
+                    <div class="hero-badge-icon">✓</div>
+                    <div class="hero-badge-text">Licensed & Insured</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="features">
         <div class="container">
             <h2 class="section-title">Why Choose Us?</h2>
-            <div class="features-grid">
-                <div class="feature-box fade-in">
+            <p class="section-subtitle">We're not the biggest, but we're the best at what we do.</p>
+            
+            <div class="features-list">
+                <div class="feature-row fade-in">
                     <div class="feature-icon">⭐</div>
-                    <h3>Quality First</h3>
-                    <p>We don't cut corners. Every job is done right the first time.</p>
+                    <div class="feature-content">
+                        <h3>Quality First, Always</h3>
+                        <p>We don't cut corners. Every job is done right the first time, with attention to detail and pride in our work.</p>
+                    </div>
                 </div>
-                <div class="feature-box fade-in" style="animation-delay: 0.1s;">
+                
+                <div class="feature-row fade-in" style="animation-delay: 0.1s;">
                     <div class="feature-icon">💰</div>
-                    <h3>Fair Pricing</h3>
-                    <p>Transparent quotes with no hidden fees or surprise charges.</p>
+                    <div class="feature-content">
+                        <h3>Transparent, Upfront Pricing</h3>
+                        <p>No hidden fees or surprise charges. Get a detailed quote before we start, and what we quote is what you pay.</p>
+                    </div>
                 </div>
-                <div class="feature-box fade-in" style="animation-delay: 0.2s;">
+                
+                <div class="feature-row fade-in" style="animation-delay: 0.2s;">
                     <div class="feature-icon">🤝</div>
-                    <h3>Local & Trusted</h3>
-                    <p>Family-owned business serving Wilmington for over a decade.</p>
+                    <div class="feature-content">
+                        <h3>Family-Owned & Local</h3>
+                        <p>We're not a franchise. We live here, work here, and care about this community. Your neighbors are our neighbors.</p>
+                    </div>
                 </div>
-                <div class="feature-box fade-in" style="animation-delay: 0.3s;">
+                
+                <div class="feature-row fade-in" style="animation-delay: 0.3s;">
                     <div class="feature-icon">⚡</div>
-                    <h3>Fast Response</h3>
-                    <p>Same-day service available. We respect your time.</p>
+                    <div class="feature-content">
+                        <h3>Fast, Reliable Service</h3>
+                        <p>Same-day service available. We show up on time, finish on schedule, and respect your time as much as our own.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -310,53 +531,65 @@
 
     <section class="about" id="about">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
+            <div class="about-grid">
+                <div class="about-content slide-left">
                     <h2>Serving Wilmington Since 2010</h2>
-                    <p>We started as a small local business with one goal: provide honest, reliable service to our neighbors in Wilmington.</p>
-                    <p>Today, we're proud to serve hundreds of satisfied customers each year, but we've never forgotten our roots. Every customer gets the same personalized attention we gave our very first client.</p>
+                    <p>
+                        We started as a small local business with one goal: provide honest, reliable service to our neighbors in Wilmington.
+                    </p>
+                    <p>
+                        Today, we're proud to serve hundreds of satisfied customers each year. But we've never forgotten our roots—every customer gets the same personalized attention we gave our very first client.
+                    </p>
                     <p>Licensed, insured, and committed to excellence.</p>
                 </div>
-                <div class="stats">
-                    <div class="stat-box">
-                        <div class="stat-number">1000+</div>
-                        <div class="stat-label">Happy Customers</div>
+                
+                <div class="about-metrics slide-right">
+                    <div class="metric-card">
+                        <div class="metric-number">1000+</div>
+                        <div class="metric-label">Projects Completed</div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-number">14</div>
-                        <div class="stat-label">Years Experience</div>
+                    <div class="metric-card">
+                        <div class="metric-number">14</div>
+                        <div class="metric-label">Years Experience</div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-number">4.9</div>
-                        <div class="stat-label">Star Rating</div>
+                    <div class="metric-card">
+                        <div class="metric-number">4.9★</div>
+                        <div class="metric-label">Customer Rating</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">100%</div>
+                        <div class="metric-label">Satisfaction Goal</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact-section" id="contact">
+    <section class="cta-section" id="contact">
         <div class="container">
             <h2>Ready to Get Started?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Call us today for a free quote</p>
+            <p>Call us today for a free, no-obligation quote</p>
+            <a href="tel:+19105240056" class="cta-button" style="background: white; color: var(--primary); font-size: 1.2rem; padding: 1.25rem 2.5rem;">
+                📞 (910) 524-0056
+            </a>
+            
             <div class="contact-info">
-                📞 <a href="tel:+19105240056">(910) 524-0056</a>
-            </div>
-            <div class="contact-info">
-                📍 Serving Wilmington, NC and surrounding areas
-            </div>
-            <div class="contact-info">
-                ⏰ Monday - Saturday, 7AM - 6PM
+                <div class="contact-item">
+                    📍 Serving Wilmington, NC
+                </div>
+                <div class="contact-item">
+                    ⏰ Mon-Sat, 7AM - 6PM
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p><strong>Carolina Coastal Services</strong></p>
-            <p>Wilmington, NC</p>
-            <p>Phone: <a href="tel:+19105240056" style="color: #10b981; text-decoration: none;">(910) 524-0056</a></p>
-            <p style="margin-top: 2rem; opacity: 0.7;">© 2026 Carolina Coastal Services. All rights reserved.</p>
+            <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem;">Carolina Coastal Services</p>
+            <p style="color: #9ca3af;">Wilmington, NC</p>
+            <p style="margin-top: 1.5rem;">Phone: <a href="tel:+19105240056">(910) 524-0056</a></p>
+            <p style="margin-top: 2rem; opacity: 0.6; font-size: 0.9rem;">© 2026 Carolina Coastal Services. All rights reserved.</p>
         </div>
     </footer>
 
@@ -364,12 +597,14 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
+                    entry.target.style.opacity = '1';
                 }
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.feature-box, .stat-box').forEach(el => observer.observe(el));
+        document.querySelectorAll('.fade-in, .slide-left, .slide-right').forEach(el => {
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
