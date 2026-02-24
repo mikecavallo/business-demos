@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Demo Sites</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .card h3 {
+            margin: 0 0 12px 0;
+            color: #2563eb;
+        }
+        .card p {
+            margin: 0 0 16px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .card a {
+            display: inline-block;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI-Generated Demo Sites</h1>
+    <p class="subtitle">Professional websites built for local businesses</p>
+    
+    <div class="grid" id="sites">
+        <!-- Sites will be added here automatically -->
+    </div>
+
+    <script>
+        // Auto-populated by build script
+        const sites = [];
+        
+        const grid = document.getElementById('sites');
+        
+        if (sites.length === 0) {
+            grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999;">No demo sites yet. Check back soon!</p>';
+        } else {
+            sites.forEach(site => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h3>${site.name}</h3>
+                    <p>${site.category} • ${site.location}</p>
+                    <a href="./${site.slug}/">View Demo →</a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>
