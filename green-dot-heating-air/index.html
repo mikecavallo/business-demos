@@ -3,234 +3,445 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Dot Heating & Air</title>
-    <meta name="description" content="Professional hvac contractor services in 204 Antilles Ct, Wilmington, NC 28405, USA">
+    <title>Green Dot Heating & Air | HVAC Experts in Wilmington, NC</title>
+    <meta name="description" content="Trusted HVAC services in Wilmington. AC repair, heating installation, and maintenance. 24/7 emergency service. Call now!">
     <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-header {
-    background: #1a1a1a;
-    color: white;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-nav a:hover {
-    color: #4a9eff;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 6rem 0;
-    text-align: center;
-}
+        .logo::before {
+            content: "❄️";
+            font-size: 2rem;
+        }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
 
-.cta-button {
-    background: white;
-    color: #667eea;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    transition: transform 0.3s;
-}
+        nav a:hover {
+            opacity: 0.8;
+        }
 
-.cta-button:hover {
-    transform: translateY(-3px);
-}
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
 
-.section {
-    padding: 4rem 0;
-}
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,107,53,0.4);
+        }
 
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0,102,204,0.95) 0%, rgba(0,77,153,0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1600&q=80') center/cover;
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+        }
 
-.benefits-grid, .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
+        .hero::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, white);
+        }
 
-.benefit-card, .service-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
 
-.benefit-card:hover, .service-card:hover {
-    transform: translateY(-5px);
-}
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
 
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-.form-group {
-    margin-bottom: 1.5rem;
-}
+        /* Features Grid */
+        .features {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #0066cc;
+        }
 
-.form-group textarea {
-    min-height: 150px;
-}
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
 
-.submit-button {
-    background: #667eea;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s;
-}
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-.submit-button:hover {
-    background: #764ba2;
-}
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
 
-footer {
-    background: #1a1a1a;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 4rem;
-}
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
 
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
+        .feature-card h3 {
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
 
-    .hero p {
-        font-size: 1.2rem;
-    }
+        /* Services */
+        .services {
+            padding: 80px 20px;
+            background: white;
+        }
 
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}
-</style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #0066cc;
+        }
+
+        .service-item h3 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-item li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-item li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Emergency CTA */
+        .emergency-banner {
+            background: linear-gradient(135deg, #ff6b35 0%, #f44336 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .emergency-banner::before {
+            content: "🚨";
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .emergency-banner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .emergency-banner p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .phone-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: inline-block;
+            background: white;
+            color: #ff6b35;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .phone-number:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 20px 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+
+            .phone-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="container">
-            <div class="logo">
-                <h2>Green Dot Heating & Air</h2>
-            </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <div class="logo">Green Dot Heating & Air</div>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+19105240056" class="cta-button">Call Now</a>
+        </div>
     </header>
 
-    <section class="hero">
+    <section class="hero fade-in">
         <div class="container">
-            <h1>Welcome to Green Dot Heating & Air</h1>
-            <p>Professional hvac contractor services in 204 Antilles Ct, Wilmington, NC 28405, USA</p>
-            <a href="contact.html" class="cta-button">Contact Us Today</a>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Why Choose Us</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card"><h3>Professional service</h3></div><div class="benefit-card"><h3>Experienced team</h3></div><div class="benefit-card"><h3>Customer satisfaction guaranteed</h3></div>
+            <h1>Wilmington's Trusted HVAC Experts</h1>
+            <p>Fast, reliable heating & cooling services. Available 24/7 for emergencies.</p>
+            <div class="hero-cta">
+                <a href="tel:+19105240056" class="cta-button" style="font-size: 1.2rem; padding: 1rem 2rem;">📞 (910) 524-0056</a>
+                <a href="#services" class="cta-button" style="background: transparent; border: 2px solid white;">View Services</a>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background: #f9f9f9;">
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Green Dot?</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Same-Day Service</h3>
+                    <p>Most repairs completed within 24 hours. We know you can't wait when your AC breaks in summer.</p>
+                </div>
+                <div class="feature-card fade-in" style="animation-delay: 0.1s;">
+                    <span class="feature-icon">💰</span>
+                    <h3>Upfront Pricing</h3>
+                    <p>No hidden fees. Get a detailed quote before we start any work. What we quote is what you pay.</p>
+                </div>
+                <div class="feature-card fade-in" style="animation-delay: 0.2s;">
+                    <span class="feature-icon">🏆</span>
+                    <h3>Licensed & Insured</h3>
+                    <p>Fully certified HVAC technicians with 15+ years experience in Wilmington area.</p>
+                </div>
+                <div class="feature-card fade-in" style="animation-delay: 0.3s;">
+                    <span class="feature-icon">🌙</span>
+                    <h3>24/7 Emergency</h3>
+                    <p>AC died at midnight? We're here. Call anytime, day or night, for emergency repairs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto;">
-                We provide quality hvac contractor services to 204 Antilles Ct, Wilmington, NC 28405, USA and surrounding areas.
-            </p>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="services.html" class="cta-button">View All Services</a>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>❄️ Air Conditioning</h3>
+                    <ul>
+                        <li>AC Installation & Replacement</li>
+                        <li>AC Repair (all makes & models)</li>
+                        <li>Preventive Maintenance</li>
+                        <li>Emergency AC Service</li>
+                        <li>Duct Cleaning & Sealing</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>🔥 Heating Systems</h3>
+                    <ul>
+                        <li>Furnace Installation</li>
+                        <li>Heater Repair</li>
+                        <li>Heat Pump Service</li>
+                        <li>Thermostat Replacement</li>
+                        <li>Winter Safety Inspections</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>🔧 Maintenance Plans</h3>
+                    <ul>
+                        <li>Annual Tune-Ups</li>
+                        <li>Priority Scheduling</li>
+                        <li>Discounted Repairs</li>
+                        <li>Extended Warranties</li>
+                        <li>Energy Efficiency Checks</li>
+                    </ul>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section class="emergency-banner">
+        <div class="container">
+            <h2>Need Emergency HVAC Service?</h2>
+            <p>We're available 24/7 for urgent heating and cooling issues</p>
+            <a href="tel:+19105240056" class="phone-number">(910) 524-0056</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Green Dot Heating & Air. All rights reserved.</p>
+            <p><strong>Green Dot Heating & Air</strong></p>
+            <p>204 Antilles Ct, Wilmington, NC 28405</p>
+            <p>Phone: <a href="tel:+19105240056">(910) 524-0056</a></p>
+            <p style="margin-top: 2rem; opacity: 0.7;">Serving Wilmington and surrounding areas since 2010</p>
         </div>
     </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .service-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
