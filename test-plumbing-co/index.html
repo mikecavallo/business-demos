@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Plumbing Co | Emergency Plumbers Wilmington NC</title>
-    <meta name="description" content="24/7 emergency plumbing in Wilmington. Leak repairs, drain cleaning, water heaters. Licensed & insured. Call now!">
+    <title>Test Plumbing Co | 24/7 Emergency Plumbers Wilmington NC</title>
+    <meta name="description" content="Emergency plumbing in Wilmington. Leaks, clogs, water heaters. Fast response, upfront pricing. Call now!">
     <style>
         * {
             margin: 0;
@@ -12,16 +12,23 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
+        :root {
+            --plumbing-blue: #1e40af;
+            --plumbing-red: #dc2626;
+            --plumbing-orange: #f97316;
         }
 
-        @keyframes fadeInUp {
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+
+        /* Animations */
+        @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(60px);
             }
             to {
                 opacity: 1;
@@ -30,44 +37,57 @@
         }
 
         @keyframes drip {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(10px); }
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(10px) scale(1.1); }
         }
 
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out forwards;
+        .slide-up {
+            animation: slideUp 0.6s ease-out forwards;
         }
 
-        header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        /* Emergency Strip */
+        .emergency-strip {
+            background: var(--plumbing-red);
             color: white;
-            padding: 1rem 0;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 700;
             position: sticky;
             top: 0;
+            z-index: 200;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .emergency-strip a {
+            color: white;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 0;
+            position: sticky;
+            top: 53px;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo::before {
-            content: "🔧";
-            font-size: 2rem;
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--plumbing-blue);
         }
 
         nav ul {
@@ -77,48 +97,67 @@
         }
 
         nav a {
-            color: white;
+            color: #1e293b;
             text-decoration: none;
-            transition: opacity 0.3s;
+            font-weight: 600;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            opacity: 0.8;
+            color: var(--plumbing-blue);
         }
 
         .cta-button {
-            background: #dc2626;
+            background: var(--plumbing-red);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
+            padding: 1rem 2rem;
+            border-radius: 100px;
             text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
             display: inline-block;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(220,38,38,0.4);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
         }
 
+        /* Hero - Full Width Centered */
         .hero {
-            background: linear-gradient(135deg, rgba(30,58,138,0.95) 0%, rgba(30,64,175,0.95) 100%), 
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.95) 0%, rgba(37, 99, 235, 0.95) 100%),
                         url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1600&q=80') center/cover;
-            color: white;
-            padding: 120px 20px 80px;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            color: white;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 10;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 800;
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
         }
 
         .hero-badges {
@@ -126,134 +165,214 @@
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .badge {
-            background: rgba(255,255,255,0.2);
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Services - Bento Box Grid */
+        .services {
+            padding: 6rem 2rem;
+            background: #f8fafc;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        .emergency-strip {
-            background: #dc2626;
-            color: white;
+        .section-header {
             text-align: center;
-            padding: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: bold;
+            margin-bottom: 4rem;
         }
 
-        .emergency-strip a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        .services-section {
-            padding: 80px 20px;
-            background: #f8f9fa;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1e3a8a;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid #1e3a8a;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-        }
-
-        .service-icon {
-            font-size: 3rem;
+        .section-header h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--plumbing-blue);
             margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 1.5rem;
+        }
+
+        .bento-item {
+            background: white;
+            border-radius: 24px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .bento-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--plumbing-blue);
+        }
+
+        .bento-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+            background: linear-gradient(135deg, var(--plumbing-blue) 0%, #1e40af 100%);
+            color: white;
+        }
+
+        .bento-item:nth-child(2) {
+            grid-column: span 2;
+        }
+
+        .bento-icon {
+            font-size: 3rem;
             animation: drip 2s ease-in-out infinite;
         }
 
-        .service-card h3 {
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+        .bento-item h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 1rem 0;
         }
 
-        .service-card ul {
+        .bento-item p {
+            opacity: 0.8;
+            font-size: 1.05rem;
+        }
+
+        .bento-item ul {
             list-style: none;
             padding: 0;
         }
 
-        .service-card li {
-            padding: 0.5rem 0;
+        .bento-item li {
+            padding: 0.4rem 0;
             padding-left: 1.5rem;
             position: relative;
         }
 
-        .service-card li::before {
-            content: "✓";
+        .bento-item li::before {
+            content: '✓';
             position: absolute;
             left: 0;
             color: #10b981;
             font-weight: bold;
         }
 
-        .cta-banner {
-            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
+        .bento-item:nth-child(1) li::before {
+            color: #60a5fa;
         }
 
-        .cta-banner h2 {
+        /* CTA Banner - Split Design */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--plumbing-red) 0%, var(--plumbing-orange) 100%);
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+        }
+
+        .cta-content {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        .cta-content h2 {
             font-size: 3rem;
+            font-weight: 900;
             margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
         .phone-big {
             font-size: 4rem;
-            font-weight: bold;
-            display: block;
-            margin: 2rem 0;
-            text-decoration: none;
+            font-weight: 900;
             color: white;
+            text-decoration: none;
+            display: block;
+            margin: 1rem 0;
         }
 
+        .cta-image {
+            background: url('https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80') center/cover;
+            position: relative;
+        }
+
+        .cta-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, var(--plumbing-red) 0%, transparent 100%);
+        }
+
+        /* Footer */
         footer {
-            background: #1a1a1a;
+            background: #0f172a;
             color: white;
-            padding: 40px 20px;
+            padding: 3rem 2rem;
             text-align: center;
         }
 
-        @media (max-width: 768px) {
+        footer a {
+            color: var(--plumbing-blue);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 3rem;
             }
-            .phone-big {
-                font-size: 2.5rem;
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
             }
+
+            .bento-item:nth-child(1) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-image {
+                min-height: 300px;
+            }
+
             nav ul {
                 display: none;
             }
@@ -261,13 +380,17 @@
     </style>
 </head>
 <body>
+    <div class="emergency-strip">
+        🚨 EMERGENCY PLUMBING? Call: <a href="tel:+19105240056">(910) 524-0056</a> - Available 24/7
+    </div>
+
     <header>
         <div class="nav-container">
-            <div class="logo">Test Plumbing Co</div>
+            <div class="logo">🔧 Test Plumbing Co</div>
             <nav>
                 <ul>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#emergency">Emergency</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -275,15 +398,13 @@
         </div>
     </header>
 
-    <div class="emergency-strip">
-        💧 EMERGENCY PLUMBING? Call now: <a href="tel:+19105240056">(910) 524-0056</a> - Available 24/7
-    </div>
-
-    <section class="hero fade-in">
-        <div class="container">
-            <h1>Wilmington's Fast Plumbers</h1>
-            <p>Leaks. Clogs. Water Heaters. We fix them all—fast.</p>
-            <a href="tel:+19105240056" class="cta-button" style="font-size: 1.3rem; padding: 1.2rem 2.5rem;">📞 Call Now: (910) 524-0056</a>
+    <section class="hero slide-up">
+        <div class="hero-content">
+            <h1>Fast Plumbers.<br>Fair Prices.</h1>
+            <p>Leaks, clogs, and water heaters fixed right—usually same day.</p>
+            <a href="tel:+19105240056" class="cta-button" style="font-size: 1.3rem; padding: 1.25rem 2.5rem;">
+                📞 Call Now: (910) 524-0056
+            </a>
             
             <div class="hero-badges">
                 <div class="badge">✓ Licensed & Insured</div>
@@ -294,49 +415,67 @@
         </div>
     </section>
 
-    <section class="services-section" id="services">
+    <section class="services">
         <div class="container">
-            <h2 class="section-title">Our Plumbing Services</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">💧</div>
-                    <h3>Leak Repairs</h3>
+            <div class="section-header slide-up">
+                <h2>Plumbing Services</h2>
+                <p>From emergency repairs to full installations, we handle it all with skill and speed.</p>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-item slide-up">
+                    <div>
+                        <div class="bento-icon">💧</div>
+                        <h3>Emergency Plumbing</h3>
+                        <p>Burst pipes? Backed-up sewer? We're on call 24/7 with an average response time under 1 hour.</p>
+                    </div>
                     <ul>
-                        <li>Pipe leak detection & repair</li>
-                        <li>Faucet & fixture leaks</li>
-                        <li>Slab leak repair</li>
-                        <li>Emergency leak service</li>
+                        <li>Burst pipe repair</li>
+                        <li>Emergency leak fixes</li>
+                        <li>Sewer backups</li>
+                        <li>Water heater failures</li>
                     </ul>
                 </div>
 
-                <div class="service-card fade-in" style="animation-delay: 0.1s;">
-                    <div class="service-icon">🚿</div>
+                <div class="bento-item slide-up" style="animation-delay: 0.1s;">
+                    <div class="bento-icon">🚿</div>
                     <h3>Drain Cleaning</h3>
                     <ul>
                         <li>Clogged drains & toilets</li>
                         <li>Sewer line cleaning</li>
                         <li>Hydro jetting</li>
-                        <li>Video camera inspection</li>
+                        <li>Camera inspection</li>
                     </ul>
                 </div>
 
-                <div class="service-card fade-in" style="animation-delay: 0.2s;">
-                    <div class="service-icon">🔥</div>
+                <div class="bento-item slide-up" style="animation-delay: 0.2s;">
+                    <div class="bento-icon">🔥</div>
                     <h3>Water Heaters</h3>
                     <ul>
-                        <li>Water heater installation</li>
-                        <li>Tankless water heaters</li>
-                        <li>Repairs & maintenance</li>
-                        <li>Emergency replacements</li>
+                        <li>Tank & tankless install</li>
+                        <li>Water heater repair</li>
+                        <li>Emergency replacement</li>
+                        <li>Maintenance service</li>
                     </ul>
                 </div>
 
-                <div class="service-card fade-in" style="animation-delay: 0.3s;">
-                    <div class="service-icon">🔧</div>
-                    <h3>Fixtures & Repairs</h3>
+                <div class="bento-item slide-up" style="animation-delay: 0.3s;">
+                    <div class="bento-icon">🔧</div>
+                    <h3>Leak Repairs</h3>
+                    <ul>
+                        <li>Pipe leak detection</li>
+                        <li>Faucet & fixture leaks</li>
+                        <li>Slab leak repair</li>
+                        <li>Under-sink repairs</li>
+                    </ul>
+                </div>
+
+                <div class="bento-item slide-up" style="animation-delay: 0.4s;">
+                    <div class="bento-icon">🏠</div>
+                    <h3>Fixtures & More</h3>
                     <ul>
                         <li>Faucet installation</li>
-                        <li>Toilet repair & replacement</li>
+                        <li>Toilet repair/replace</li>
                         <li>Garbage disposal</li>
                         <li>Shower & tub work</li>
                     </ul>
@@ -345,21 +484,24 @@
         </div>
     </section>
 
-    <section class="cta-banner" id="emergency">
-        <div class="container">
-            <h2>Plumbing Emergency?</h2>
-            <p style="font-size: 1.3rem;">We're on call 24/7. Burst pipe? Backed-up sewer? Call now.</p>
-            <a href="tel:+19105240056" class="phone-big">(910) 524-0056</a>
-            <p>Average response time: Under 1 hour</p>
+    <section class="cta-banner">
+        <div class="cta-grid">
+            <div class="cta-content">
+                <h2>Plumbing Emergency?</h2>
+                <p>We're on call 24 hours a day, 7 days a week. Burst pipe? Backed-up sewer? Call now.</p>
+                <a href="tel:+19105240056" class="phone-big">(910) 524-0056</a>
+                <p style="font-size: 1rem; opacity: 0.8;">Average response time: Under 1 hour</p>
+            </div>
+            <div class="cta-image"></div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p><strong>Test Plumbing Co</strong></p>
-            <p>Serving Wilmington, NC and surrounding areas</p>
-            <p>24/7 Emergency Service: <a href="tel:+19105240056" style="color: #60a5fa; text-decoration: none;">(910) 524-0056</a></p>
-            <p style="margin-top: 2rem; opacity: 0.7;">Licensed, Bonded & Insured | NC License #12345</p>
+            <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Test Plumbing Co</p>
+            <p style="color: #94a3b8;">Serving Wilmington, NC and surrounding areas</p>
+            <p style="margin-top: 1.5rem;">24/7 Emergency: <a href="tel:+19105240056">(910) 524-0056</a></p>
+            <p style="margin-top: 2rem; opacity: 0.6; font-size: 0.9rem;">Licensed, Bonded & Insured | NC License #12345</p>
         </div>
     </footer>
 
@@ -367,12 +509,12 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
+                    entry.target.style.opacity = '1';
                 }
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.service-card').forEach(el => observer.observe(el));
+        document.querySelectorAll('.slide-up').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
