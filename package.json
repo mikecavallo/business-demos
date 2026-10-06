@@ -1,0 +1,32 @@
+{
+  "name": "business-demos",
+  "version": "1.0.0",
+  "description": "CLI that turns a structured business brief into a 4-page static website, with LLM-written copy and honesty guardrails.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "author": "Mike Cavallo (Business Runs Better)",
+  "bin": {
+    "generate": "bin/generate.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "generate": "node bin/generate.js",
+    "demos": "node scripts/build-demos.js",
+    "manifest": "node bin/generate.js --manifest-only",
+    "lint": "eslint .",
+    "test": "node --test test/*.test.js",
+    "check": "npm run lint && npm test"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
+    "openai": "^7.28.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0"
+  }
+}
