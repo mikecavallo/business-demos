@@ -1,0 +1,47 @@
+{
+  "name": "Wrightsboro Lawn Works (fictional demo)",
+  "slug": "wrightsboro-lawn-works",
+  "demo": true,
+  "trade": "Lawn care and landscaping",
+  "city": "Wilmington, NC",
+  "serviceArea": [
+    "Castle Hayne",
+    "Ogden"
+  ],
+  "phone": "(910) 555-0123",
+  "services": [
+    {
+      "name": "Weekly mowing",
+      "details": "Mowing, edging and blowing on a set weekly schedule"
+    },
+    {
+      "name": "Mulch and bed refresh",
+      "details": "Weeding, edging and fresh mulch for planting beds"
+    },
+    {
+      "name": "Seasonal cleanup",
+      "details": "Leaf removal and storm debris cleanup"
+    }
+  ],
+  "colors": {
+    "primary": "#3f6212",
+    "accent": "#facc15"
+  },
+  "tone": "no-nonsense",
+  "audience": "busy homeowners",
+  "differentiators": [
+    {
+      "title": "Same crew every week",
+      "detail": "The same crew works your property every week and knows its quirks"
+    },
+    {
+      "title": "Simple billing",
+      "detail": "One monthly bill, no surprise line items"
+    },
+    {
+      "title": "Done and gone",
+      "detail": "Clippings blown off walks and drives before the crew leaves"
+    }
+  ],
+  "reviews": []
+}

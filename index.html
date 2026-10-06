@@ -1,89 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Demo Sites</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background: #f5f5f5;
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: #666;
-            margin-bottom: 40px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        .card h3 {
-            margin: 0 0 12px 0;
-            color: #2563eb;
-        }
-        .card p {
-            margin: 0 0 16px 0;
-            color: #666;
-            font-size: 14px;
-        }
-        .card a {
-            display: inline-block;
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .card a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site Generator Demos</title>
+<meta name="description" content="Demo websites produced by a brief-to-site generator for local service businesses. All businesses shown are fictional.">
+<style>
+  :root { --ink: #111827; --muted: #4b5563; --bg: #f3f4f6; --card: #ffffff; --line: #e5e7eb; --link: #1d4ed8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink: #f3f4f6; --muted: #9ca3af; --bg: #0b1120; --card: #111827; --line: #1f2937; --link: #93c5fd; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 40px 16px; }
+  h1 { margin: 0 0 8px; font-size: clamp(1.6rem, 4vw, 2.2rem); }
+  .lede { color: var(--muted); max-width: 44rem; margin: 0 0 28px; }
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+  .swatch { height: 10px; }
+  .body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .card h2 { margin: 0; font-size: 1.15rem; }
+  .meta { color: var(--muted); font-size: 0.9rem; margin: 0; }
+  .summary { margin: 0; flex: 1; }
+  .tag { align-self: flex-start; display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: #fef3c7; color: #78350f; }
+  a { color: var(--link); font-weight: 600; }
+  .empty { grid-column: 1 / -1; color: var(--muted); }
+  footer { margin-top: 36px; color: var(--muted); font-size: 0.9rem; }
+</style>
 </head>
 <body>
-    <h1>AI-Generated Demo Sites</h1>
-    <p class="subtitle">Professional websites built for local businesses</p>
-    
-    <div class="grid" id="sites">
-        <!-- Sites will be added here automatically -->
-    </div>
+<div class="wrap">
+  <h1>Site generator demos</h1>
+  <p class="lede">Each site below was produced by one command from a structured business brief (name, trade, city, services, phone, colors, tone). The businesses are fictional, and the phone numbers are reserved 555 numbers. Source and generator: <a href="https://github.com/mikecavallo/business-demos">github.com/mikecavallo/business-demos</a>.</p>
+  <div class="grid" id="sites" aria-live="polite"><p class="empty">Loading sites...</p></div>
+  <footer>Built by Mike Cavallo, Business Runs Better (Leland, NC).</footer>
+</div>
+<script>
+  // The list comes from sites.json, which the generator rewrites after every run.
+  const grid = document.getElementById('sites');
 
-    <script>
-        // Auto-populated by build script
-        const sites = [];
-        
-        const grid = document.getElementById('sites');
-        
-        if (sites.length === 0) {
-            grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999;">No demo sites yet. Check back soon!</p>';
-        } else {
-            sites.forEach(site => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.innerHTML = `
-                    <h3>${site.name}</h3>
-                    <p>${site.category} • ${site.location}</p>
-                    <a href="./${site.slug}/">View Demo →</a>
-                `;
-                grid.appendChild(card);
-            });
-        }
-    </script>
+  function el(tag, attrs, text) {
+    const node = document.createElement(tag);
+    Object.entries(attrs || {}).forEach(([k, v]) => node.setAttribute(k, v));
+    if (text) node.textContent = text;
+    return node;
+  }
+
+  fetch('sites.json', { cache: 'no-cache' })
+    .then((res) => { if (!res.ok) throw new Error(res.status); return res.json(); })
+    .then(({ sites }) => {
+      grid.textContent = '';
+      if (!sites.length) {
+        grid.append(el('p', { class: 'empty' }, 'No sites have been generated yet. Run the generator to add one.'));
+        return;
+      }
+      sites.forEach((site) => {
+        const card = el('article', { class: 'card' });
+        const swatch = el('div', { class: 'swatch' });
+        swatch.style.background = `linear-gradient(90deg, ${site.colors.primary} 70%, ${site.colors.accent} 70%)`;
+        const body = el('div', { class: 'body' });
+        if (site.demo) body.append(el('span', { class: 'tag' }, 'Fictional demo'));
+        body.append(
+          el('h2', {}, site.name),
+          el('p', { class: 'meta' }, `${site.trade} · ${site.city}`),
+          el('p', { class: 'summary' }, site.summary),
+          el('p', { class: 'meta' }, `Copy: ${site.provider} provider (${site.model})`),
+        );
+        body.append(el('a', { href: site.path }, 'View site'));
+        card.append(swatch, body);
+        grid.append(card);
+      });
+    })
+    .catch(() => {
+      grid.textContent = '';
+      grid.append(el('p', { class: 'empty' }, 'Could not load sites.json. If you opened this file directly, serve the folder over HTTP (for example: npx http-server .).'));
+    });
+</script>
 </body>
 </html>

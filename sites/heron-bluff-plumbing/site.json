@@ -1,0 +1,21 @@
+{
+  "name": "Heron Bluff Plumbing (fictional demo)",
+  "slug": "heron-bluff-plumbing",
+  "trade": "Plumbing",
+  "city": "Wilmington, NC",
+  "demo": true,
+  "summary": "Heron Bluff Plumbing offers leak detection and repair, water heater service, drain cleaning and fixture installation in Wilmington, NC.",
+  "colors": {
+    "primary": "#0f4c5c",
+    "accent": "#f4a259"
+  },
+  "provider": "mock",
+  "model": "mock-template-v1",
+  "generator": "1.0.0",
+  "pages": [
+    "index.html",
+    "services.html",
+    "about.html",
+    "contact.html"
+  ]
+}
