@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Heron Bluff Plumbing (fictional demo)</title>
+<meta name="description" content="Heron Bluff Plumbing offers leak detection and repair, water heater service, drain cleaning and fixture installation in Wilmington, NC.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ribbon" role="note"><strong>Demo site, fictional business.</strong> Generated from a sample brief to show the site generator. Not a real company; the phone number is a reserved 555 number.</div>
+<header class="site"><div class="wrap">
+<a class="brand" href="index.html">Heron Bluff Plumbing (fictional demo)</a>
+<nav aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" aria-current="page">Contact</a></li></ul></nav>
+<a class="call" href="tel:+19105550142">Call (910) 555-0142</a>
+</div></header>
+<main>
+<section class="hero"><div class="wrap">
+<h1>Contact Heron Bluff Plumbing</h1>
+<p>Call or send a message. Office hours: Mon to Fri, 7am to 6pm.</p>
+</div></section>
+<section><div class="wrap contact-grid">
+<div>
+<h2>Get in touch</h2>
+<p><strong>Phone:</strong> <a href="tel:+19105550142">(910) 555-0142</a></p>
+<p><strong>Email:</strong> <a href="mailto:hello@heronbluff.example">hello@heronbluff.example</a></p>
+<p><strong>Hours:</strong> Mon to Fri, 7am to 6pm</p>
+<p><strong>Service area:</strong> Wilmington, NC, Leland, Carolina Beach, Hampstead</p>
+</div>
+<div>
+<h2>Send a message</h2>
+<form data-demo-form>
+<p class="notice">Demo form: it is not connected to an inbox, so nothing you enter is sent or stored.</p>
+<label>Name <input name="name" autocomplete="name" required></label>
+<label>Phone or email <input name="contact" autocomplete="email" required></label>
+<label>How can we help? <textarea name="message" rows="5" required></textarea></label>
+<button class="btn" type="submit">Send message</button>
+<p class="notice" data-demo-status hidden role="status">Thanks for trying the demo. On a live site this message would go to the business.</p>
+</form>
+<script>
+document.querySelector('[data-demo-form]').addEventListener('submit', function (event) {
+  event.preventDefault();
+  this.querySelector('[data-demo-status]').hidden = false;
+});
+</script>
+</div>
+</div></section>
+</main>
+<footer class="site"><div class="wrap">
+<p>Heron Bluff Plumbing (fictional demo) &middot; Wilmington, NC &middot; <a href="tel:+19105550142">(910) 555-0142</a></p>
+<p>This is a demonstration site for a fictional business. <a href="../../index.html">See all demo sites</a>.</p>
+</div></footer>
+</body>
+</html>

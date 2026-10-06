@@ -1,0 +1,53 @@
+{
+  "name": "Gullwing Heating & Air (fictional demo)",
+  "slug": "gullwing-heating-air",
+  "demo": true,
+  "trade": "Heating and air conditioning",
+  "city": "Leland, NC",
+  "serviceArea": [
+    "Wilmington",
+    "Southport",
+    "Bolivia"
+  ],
+  "phone": "(910) 555-0187",
+  "email": "service@gullwing.example",
+  "hours": "Mon to Sat, 8am to 5pm",
+  "services": [
+    {
+      "name": "AC repair",
+      "details": "Diagnosis and repair of central air and heat pump systems"
+    },
+    {
+      "name": "System replacement",
+      "details": "Load calculation, equipment options and installation"
+    },
+    {
+      "name": "Seasonal tune-ups",
+      "details": "Spring cooling and fall heating checkups"
+    },
+    {
+      "name": "Indoor air quality",
+      "details": "Filtration upgrades and humidity control for humid coastal summers"
+    }
+  ],
+  "colors": {
+    "primary": "#1e3a8a",
+    "accent": "#22c55e"
+  },
+  "tone": "professional",
+  "audience": "homeowners and small offices",
+  "differentiators": [
+    {
+      "title": "Repair or replace, in writing",
+      "detail": "Written options for repair versus replacement so you can compare"
+    },
+    {
+      "title": "On-the-way texts",
+      "detail": "A text when the technician is on the way, so you are not stuck waiting"
+    },
+    {
+      "title": "Tune-up reminders",
+      "detail": "Maintenance reminders so seasonal tune-ups are not forgotten"
+    }
+  ]
+}

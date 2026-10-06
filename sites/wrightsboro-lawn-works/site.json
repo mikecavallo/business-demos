@@ -1,0 +1,21 @@
+{
+  "name": "Wrightsboro Lawn Works (fictional demo)",
+  "slug": "wrightsboro-lawn-works",
+  "trade": "Lawn care and landscaping",
+  "city": "Wilmington, NC",
+  "demo": true,
+  "summary": "Wrightsboro Lawn Works offers weekly mowing, mulch and bed refresh and seasonal cleanup in Wilmington, NC.",
+  "colors": {
+    "primary": "#3f6212",
+    "accent": "#facc15"
+  },
+  "provider": "mock",
+  "model": "mock-template-v1",
+  "generator": "1.0.0",
+  "pages": [
+    "index.html",
+    "services.html",
+    "about.html",
+    "contact.html"
+  ]
+}

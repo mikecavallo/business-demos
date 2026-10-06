@@ -1,0 +1,70 @@
+{
+  "sites": [
+    {
+      "name": "Gullwing Heating & Air (fictional demo)",
+      "slug": "gullwing-heating-air",
+      "trade": "Heating and air conditioning",
+      "city": "Leland, NC",
+      "demo": true,
+      "summary": "Gullwing Heating & Air offers AC repair, system replacement, seasonal tune-ups and indoor air quality in Leland, NC.",
+      "colors": {
+        "primary": "#1e3a8a",
+        "accent": "#22c55e"
+      },
+      "provider": "mock",
+      "model": "mock-template-v1",
+      "generator": "1.0.0",
+      "pages": [
+        "index.html",
+        "services.html",
+        "about.html",
+        "contact.html"
+      ],
+      "path": "sites/gullwing-heating-air/"
+    },
+    {
+      "name": "Heron Bluff Plumbing (fictional demo)",
+      "slug": "heron-bluff-plumbing",
+      "trade": "Plumbing",
+      "city": "Wilmington, NC",
+      "demo": true,
+      "summary": "Heron Bluff Plumbing offers leak detection and repair, water heater service, drain cleaning and fixture installation in Wilmington, NC.",
+      "colors": {
+        "primary": "#0f4c5c",
+        "accent": "#f4a259"
+      },
+      "provider": "mock",
+      "model": "mock-template-v1",
+      "generator": "1.0.0",
+      "pages": [
+        "index.html",
+        "services.html",
+        "about.html",
+        "contact.html"
+      ],
+      "path": "sites/heron-bluff-plumbing/"
+    },
+    {
+      "name": "Wrightsboro Lawn Works (fictional demo)",
+      "slug": "wrightsboro-lawn-works",
+      "trade": "Lawn care and landscaping",
+      "city": "Wilmington, NC",
+      "demo": true,
+      "summary": "Wrightsboro Lawn Works offers weekly mowing, mulch and bed refresh and seasonal cleanup in Wilmington, NC.",
+      "colors": {
+        "primary": "#3f6212",
+        "accent": "#facc15"
+      },
+      "provider": "mock",
+      "model": "mock-template-v1",
+      "generator": "1.0.0",
+      "pages": [
+        "index.html",
+        "services.html",
+        "about.html",
+        "contact.html"
+      ],
+      "path": "sites/wrightsboro-lawn-works/"
+    }
+  ]
+}

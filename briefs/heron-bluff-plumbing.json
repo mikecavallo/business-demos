@@ -1,0 +1,50 @@
+{
+  "name": "Heron Bluff Plumbing (fictional demo)",
+  "slug": "heron-bluff-plumbing",
+  "demo": true,
+  "trade": "Plumbing",
+  "city": "Wilmington, NC",
+  "serviceArea": [
+    "Leland",
+    "Carolina Beach",
+    "Hampstead"
+  ],
+  "phone": "(910) 555-0142",
+  "email": "hello@heronbluff.example",
+  "hours": "Mon to Fri, 7am to 6pm",
+  "services": [
+    {
+      "name": "Leak detection and repair",
+      "details": "Finding and fixing leaks under slabs, behind walls and at fixtures"
+    },
+    {
+      "name": "Water heater service",
+      "details": "Repair and replacement of tank and tankless water heaters"
+    },
+    "Drain cleaning",
+    {
+      "name": "Fixture installation",
+      "details": "Faucets, toilets, sinks and shower valves installed and tested"
+    }
+  ],
+  "colors": {
+    "primary": "#0f4c5c",
+    "accent": "#f4a259"
+  },
+  "tone": "friendly",
+  "audience": "homeowners in older coastal houses",
+  "differentiators": [
+    {
+      "title": "Upfront pricing",
+      "detail": "You get the price and an explanation of the work before anything starts"
+    },
+    {
+      "title": "Clean work areas",
+      "detail": "Shoe covers on and the work area cleaned up before we leave"
+    },
+    {
+      "title": "Photos of every fix",
+      "detail": "Photos of the problem and the repair are sent to you after each job"
+    }
+  ]
+}
